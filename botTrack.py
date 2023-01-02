@@ -35,8 +35,9 @@ def webhook():
 
 def iniciarChrome():
     #ruta = ChromeDriverManager(path='./chromedriver').install()
-    service = Service(executable_path=r"C:\Users\usuario\Desktop\Bots\BotTrackPY\chromedriver.exe")
+    #service = Service(executable_path=r"C:\Users\usuario\Desktop\Bots\BotTrackPY\chromedriver.exe")
     #service = Service(executable_path="C://Users//usuario//Desktop//Bots//BotTrackPY//chromedriver.exe")
+   
     options = Options()
     options.add_argument("--headless")
     options.add_argument("--disable-web-security")
@@ -64,7 +65,8 @@ def iniciarChrome():
     #s = Service(service)
 
     #driver = webdriver.Chrome(service=s, options=options)
-    driver = webdriver.Chrome(service=service, options=options)
+    #driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
     return driver
 
