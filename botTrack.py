@@ -31,7 +31,7 @@ def webhook():
 
 
 #bot.send_message(5760438151,"Esta funcionando")
-#asasas
+#a ver que pasa
 
 def iniciarChrome():
     #ruta = ChromeDriverManager(path='./chromedriver').install()
