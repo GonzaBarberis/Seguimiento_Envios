@@ -34,9 +34,10 @@ def webhook():
 
 
 def iniciarChrome():
-    ruta = ChromeDriverManager(path='./chromedriver').install()
+    #ruta = ChromeDriverManager(path='./chromedriver').install()
+    service = Service(executable_path="./chromedriver.exe")
     options = Options()
-    #options.add_argument("--headless")
+    options.add_argument("--headless")
     options.add_argument("--disable-web-security")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
@@ -59,9 +60,10 @@ def iniciarChrome():
     options.add_experimental_option("prefs", prefs)
 
     
-    s = Service(ruta)
+    #s = Service(service)
 
-    driver = webdriver.Chrome(service=s, options=options)
+    #driver = webdriver.Chrome(service=s, options=options)
+    driver = webdriver.Chrome(service=service, options=options)
 
     return driver
 
@@ -71,7 +73,7 @@ def iniciarChrome():
 def buscar_Info():
     print('\033[92m' + "A ver que sale..." + '\033[0m')
     try:
-        bot.send_message(5760438151,"<b>Railway?</b>", parse_mode="html")
+        bot.send_message(5760438151,"<b>jeje</b>", parse_mode="html")
         time.sleep(2)
         input = inicio.find_element(By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input')
         input.click()
