@@ -21,12 +21,12 @@ webserver = Flask(__name__)
 
 
 #POST (enviar informacion al seridor)
-@webserver.route("/", methods=['POST'])
-def webhook():
-    if request.headers.get("content-type") == "application/json":
-        update = telebot.types.Update.de_json(request.stream.read().decode('utf-8'))
-        bot.process_new_updates([update])
-        return "OK", 200
+# @webserver.route("/", methods=['POST'])
+# def webhook():
+#     if request.headers.get("content-type") == "application/json":
+#         update = telebot.types.Update.de_json(request.stream.read().decode('utf-8'))
+#         bot.process_new_updates([update])
+#         return "OK", 200
 
 
 
@@ -36,10 +36,10 @@ def webhook():
 def iniciarChrome():
     #ruta = ChromeDriverManager(path='./chromedriver').install()
     #service = Service(executable_path=r"C:\Users\usuario\Desktop\Bots\BotTrackPY\chromedriver.exe")
-    #service = Service(executable_path="C://Users//usuario//Desktop//Bots//BotTrackPY//chromedriver.exe")
+    
    
     options = Options()
-    options.add_argument("--headless")
+    #options.add_argument("--headless")
     options.add_argument("--disable-web-security")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
@@ -61,12 +61,13 @@ def iniciarChrome():
      #para evitar que Chrome
     options.add_experimental_option("prefs", prefs)
 
+
+    service = Service(executable_path="C://Users//usuario//Desktop//Bots//BotTrackPY//chromedriver.exe")
     
     #s = Service(service)
 
     #driver = webdriver.Chrome(service=s, options=options)
-    #driver = webdriver.Chrome(service=service, options=options)
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+    driver = webdriver.Chrome(service=service, options=options)
 
     return driver
 
