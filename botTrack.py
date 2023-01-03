@@ -30,6 +30,8 @@ webserver = Flask(__name__)
 
 
 
+
+
 #bot.send_message(5760438151,"Esta funcionando")
 #a ver que pasa
 
@@ -77,7 +79,8 @@ def iniciarChrome():
 def buscar_Info():
     print('\033[92m' + "A ver que sale..." + '\033[0m')
     try:
-        bot.send_message(5760438151,"<b>jeje</b>", parse_mode="html")
+        print('Funciona')
+        #bot.send_message(5760438151,"<b>jeje</b>", parse_mode="html")
         time.sleep(2)
         input = inicio.find_element(By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input')
         input.click()
@@ -95,8 +98,11 @@ def buscar_Info():
         print('\033[96m' + "Eror en la búsqueda" + '\033[0m')
         inicio.quit()
 
-if __name__ == '__main__':
+if __name__ == '__main__':  
+    #webserver.run(host="0.0.0.0", port=4000, debug=True)
+
     inicio = iniciarChrome()
+    
     wait = WebDriverWait(inicio, 20)
     url = "https://google.com"
     inicio.get(url)
