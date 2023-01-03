@@ -34,33 +34,33 @@ webserver = Flask(__name__)
 def iniciarChrome():
     
    
-    # options = Options()
-    # options.add_argument("--headless")
-    # options.add_argument("--disable-web-security")
-    # options.add_argument("--disable-dev-shm-usage")
-    # options.add_argument("--no-sandbox")
-    # options.add_argument("--log-level=3")
-    # options.add_argument("--no-first-run")
-    # options.add_argument("--no-proxy-server")
-    # options.add_argument("--disable-blink-features=AutomationControlled")
-    # exp_opt = [
-    #     'enable-automation',
-    #     'enable-logging'
-    # ]
-    # options.add_experimental_option("excludeSwitches", exp_opt)
+    options = Options()
+    options.add_argument("--headless")
+    options.add_argument("--disable-web-security")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--log-level=3")
+    options.add_argument("--no-first-run")
+    options.add_argument("--no-proxy-server")
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    exp_opt = [
+        'enable-automation',
+        'enable-logging'
+    ]
+    options.add_experimental_option("excludeSwitches", exp_opt)
 
-    # prefs = {
-    #     "profile.default_content_setting_values.notifications" : 2,
-    #     "intl.accept_languages" : ["es-ES","es"],
-    #     "credentials_enable_service":False
-    #     }
-    #  #para evitar que Chrome
-    # options.add_experimental_option("prefs", prefs)
+    prefs = {
+        "profile.default_content_setting_values.notifications" : 2,
+        "intl.accept_languages" : ["es-ES","es"],
+        "credentials_enable_service":False
+        }
+     #para evitar que Chrome
+    options.add_experimental_option("prefs", prefs)
 
 
-    service = Service(executable_path=r'./chromedriver')
-    #driver = webdriver.Chrome(service=service, options=options)
-    driver = webdriver.Chrome(service=service)
+    service = Service(executable_path=r'/chromedriver')
+    driver = webdriver.Chrome(service=service, options=options)
+    #driver = webdriver.Chrome(service=service)
 
     return driver
 
