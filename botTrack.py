@@ -64,11 +64,7 @@ def iniciarChrome():
     options.add_experimental_option("prefs", prefs)
 
 
-    service = Service(executable_path=".\\chromedriver\\chromedriver.exe")
-    
-    #s = Service(service)
-
-    #driver = webdriver.Chrome(service=s, options=options)
+    service = Service(executable_path=".//chromedriver//chromedriver.exe")
     driver = webdriver.Chrome(service=service, options=options)
 
     return driver
