@@ -4,5 +4,5 @@ COPY requirements.txt /botTrack/
 RUN pip install -r requirements.txt
 COPY . /botTrack
 ENTRYPOINT ["python3"]
-#ENV PATH "$PATH:/" 
-CMD [ "python", "botTrack.py"]
+ENV PATH "$PATH:/" 
+CMD [ "botTrack.py"]
