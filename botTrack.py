@@ -29,15 +29,9 @@ webserver = Flask(__name__)
 #         return "OK", 200
 
 
-
-
-
 #bot.send_message(5760438151,"Esta funcionando")
-#a ver que pasa
 
 def iniciarChrome():
-    #ruta = ChromeDriverManager(path='./chromedriver').install()
-    #service = Service(executable_path=r"C:\Users\usuario\Desktop\Bots\BotTrackPY\chromedriver.exe")
     
    
     options = Options()
@@ -94,15 +88,18 @@ def buscar_Info():
         print('\033[96m' + "Eror en la búsqueda" + '\033[0m')
         inicio.quit()
 
+
+
 if __name__ == '__main__':  
-    print('============ENTRA AL NAME================')
-
-
+    print('----1----')
     inicio = iniciarChrome()
-    
+    print('----2----')
     wait = WebDriverWait(inicio, 20)
     url = "https://google.com"
+    print('----3----')
     inicio.get(url)
+    print('----4----')
     buscar_Info()
-
+    print('----5----')
+    #bot.set_webhook(url='seguimientoenvios-production.up.railway.app')
     serve(webserver, host="0.0.0.0", port=5000)
