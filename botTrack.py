@@ -64,7 +64,7 @@ def iniciarChrome():
     options.add_experimental_option("prefs", prefs)
 
 
-    service = Service(executable_path="C://Users//usuario//Desktop//Bots//BotTrackPY//chromedriver.exe")
+    service = Service(executable_path="./chromedriver.exe")
     
     #s = Service(service)
 
