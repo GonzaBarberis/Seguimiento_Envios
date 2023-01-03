@@ -99,8 +99,6 @@ def buscar_Info():
         inicio.quit()
 
 if __name__ == '__main__':  
-    serve(webserver, host="0.0.0.0", port=5000)
-
     print('============ENTRA AL NAME================')
 
 
@@ -110,3 +108,5 @@ if __name__ == '__main__':
     url = "https://google.com"
     inicio.get(url)
     buscar_Info()
+
+    serve(webserver, host="0.0.0.0", port=5000)
